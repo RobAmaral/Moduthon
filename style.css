@@ -6,7 +6,7 @@ body{
     background-color: #c5f4ec;
 }
 header{
-    background-color: #11111f;
+    background-color: #20203b;
     height: 10vh;
     margin-bottom: 5vh;
 }
@@ -17,7 +17,7 @@ main{
     height: 80vh;
 }
 footer{
-    background-color: #11111f;
+    background-color: #20203b;
     height: 10vh;
     margin-top: 5vh;
 }
@@ -29,6 +29,17 @@ a{
 }
 .logo-1{
     height: 5vh;
+}
+.button{
+    border: black solid;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+}
+.button-t{
+    margin: 5px;
+    color: black;
+    font-size: 2vh;
 }
 #footer-1{
     font-family: Arial;
