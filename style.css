@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #11111f;
+    border: 0.25px solid transparent;
+    border-radius: 50px;
+}
 body{
     background-color: #c5f4ec;
 }
@@ -15,6 +23,12 @@ main{
     width: 85vw;
     height: 80vh;
 }
+main.body-2{
+    background: white;
+    margin: 0 7.5vw;
+    width: 85vw;
+    height: fit-content;
+}
 footer{
     background-color: #20203b;
     height: 10vh;
@@ -22,6 +36,12 @@ footer{
 }
 a{
     text-decoration: none;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+h3{
+    font-family: 'Patua One';
 }
 .links{
     width: fit-content;
@@ -38,7 +58,6 @@ a{
 }
 .button:hover{
     background: linear-gradient(0deg, white, #3cdbc0);
-    transition: 2s;
 }
 .button-m{
     position: absolute;
@@ -54,7 +73,7 @@ a{
     font-size: 5vh;
 }
 #footer-1{
-    font-family: Arial;
+    font-family: 'Patua One';
     padding-top: 2.5vh;
     font-size: 2vh;
     color: #8ae9d9;
