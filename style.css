@@ -12,7 +12,6 @@ header{
 }
 main{
     margin: 0 7.5vw;
-    background-color: white;
     width: 85vw;
     height: 80vh;
 }
@@ -31,15 +30,28 @@ a{
     height: 5vh;
 }
 .button{
+    background: white;
     border: black solid;
-    border-radius: 10px;
-    height: fit-content;
-    width: fit-content;
+    border-radius: 50px;
+    height: 23.99vh;
+    width: 84.5vw;
+}
+.button:hover{
+    background: linear-gradient(0deg, white, #3cdbc0);
+    transition: 2s;
+}
+.button-m{
+    position: absolute;
+    padding: 8vh 2vw;
+    width: 80.5vw;
+}
+.spacer{
+    height: 3vh;
 }
 .button-t{
     margin: 5px;
     color: black;
-    font-size: 2vh;
+    font-size: 5vh;
 }
 #footer-1{
     font-family: Arial;
