@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #11111f;
+    border: 0.25px solid transparent;
+    border-radius: 50px;
+}
+body{
+    background-color: #c5f4ec;
+}
+header{
+    background-color: #20203b;
+    height: 10vh;
+    margin-bottom: 5vh;
+}
+main{
+    margin: 0 7.5vw;
+    width: 85vw;
+    height: 80vh;
+}
+main.body-2{
+    background: white;
+    margin: 0 7.5vw;
+    width: 85vw;
+    height: fit-content;
+}
+footer{
+    background-color: #20203b;
+    height: 10vh;
+    margin-top: 5vh;
+}
+a{
+    text-decoration: none;
+}
+p{
+    font-family: 'Open Sans', sans-serif;
+}
+h3{
+    font-family: 'Patua One';
+}
+.links{
+    width: fit-content;
+}
+.logo-1{
+    height: 5vh;
+}
+.button{
+    background: white;
+    border: black solid;
+    border-radius: 50px;
+    height: 23.99vh;
+    width: 84.5vw;
+}
+.button:hover{
+    background: linear-gradient(0deg, white, #3cdbc0);
+}
+.button-m{
+    position: absolute;
+    padding: 8vh 2vw;
+    width: 80.5vw;
+}
+.spacer{
+    height: 3vh;
+}
+.button-t{
+    margin: 5px;
+    color: black;
+    font-size: 5vh;
+}
+#footer-1{
+    font-family: 'Patua One';
+    padding-top: 2.5vh;
+    font-size: 2vh;
+    color: #8ae9d9;
+    text-align: center;
+}
+#name-h{
+    font-family: 'Aboreto', cursive;
+    color: #3cdbc0;
+    font-size: 3.5vh;
+    padding-top: 3vh;
+    margin: 0 2.5vh;
+}
