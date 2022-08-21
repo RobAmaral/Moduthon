@@ -11,7 +11,10 @@
     border-radius: 50px;
 }
 body{
-    background-color: #c5f4ec;
+    background-image: url(./img/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw;
 }
 header{
     background-color: #20203b;
@@ -24,7 +27,8 @@ main{
     height: 80vh;
 }
 main.body-2{
-    background: white;
+    display: block;
+    background: #20203bcc;
     margin: 0 7.5vw;
     width: 85vw;
     height: fit-content;
@@ -38,10 +42,21 @@ a{
     text-decoration: none;
 }
 p{
+    margin: 10px;
+    text-align: justify;
+    color: #3cdbc0;
     font-family: 'Open Sans', sans-serif;
 }
 h3{
+    margin: 10px;
+    text-align: justify;
+    color: #3cdbc0;
     font-family: 'Patua One';
+}
+img{
+    width: 69vw;
+    margin: 25px;
+    margin-left: 7.5vw;
 }
 .links{
     width: fit-content;
@@ -50,25 +65,28 @@ h3{
     height: 5vh;
 }
 .button{
-    background: white;
-    border: black solid;
+    background: lightblue;
+    border: transparent solid;
     border-radius: 50px;
     height: 23.99vh;
-    width: 84.5vw;
+    width: 30vh;
 }
 .button:hover{
-    background: linear-gradient(0deg, white, #3cdbc0);
+    transition: 0.5s;
+    background: radial-gradient(white 0%, white 45%, yellow 100%);
+    border: black solid;
+    box-shadow: 0 0 20px yellow;
 }
 .button-m{
     position: absolute;
     padding: 8vh 2vw;
-    width: 80.5vw;
+    width: 22vh;
 }
 .spacer{
     height: 3vh;
 }
 .button-t{
-    margin: 5px;
+    text-align: center;
     color: black;
     font-size: 5vh;
 }
