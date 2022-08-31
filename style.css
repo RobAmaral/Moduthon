@@ -46,8 +46,10 @@ p{
     text-align: justify;
     color: #3cdbc0;
     font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
 }
 h3{
+    padding-top: 15px;
     margin: 10px;
     text-align: justify;
     color: #3cdbc0;

@@ -21,6 +21,851 @@
 
     <main class="body-2">
         <div class="body-2">
+            <h3>Comandos básicos:</h3>
+            <p><strong>Print:</strong><br>
+                
+                
+                <br>
+                Forma geral: print expr,expr,... <br>
+                
+                Os valores das expressões são escritos um após o outro sem 
+                pular de linha:<br>
+                <code>>>> print "1.001 ao quadrado é ",1.001**2<br>
+                
+                1.001 ao quadrado é 1.002001<br></code><br>
+                
+                
+                Se o comando terminar com vírgula, o próximo print escreverá
+                na mesma linha. Por exemplo:<br>
+                
+                <code>>>> a, b = 0, 1<br>
+                
+                >>> while b < 1000:<br>
+                
+                    print b,<br>
+                
+                    a, b = b, a+b<br>
+                
+                
+                
+                    1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987</code><br><br>
+                
+                
+                
+                
+                <strong>Input:</strong><br><br>
+                
+                
+                
+                O programa que computa elementos da série de Fibonacci 
+                termina quando atinge um elemento com valor superior a uma 
+                constante<br>
+                <br>
+                Podemos tornar o programa mais flexível se ao usuário for 
+                permitido estipular o valor máximo<br>
+                <br>
+                O comando input permite perguntar ao usuário um valor 
+                (normalmente é atribuído a uma variável)<br>
+                <br>
+                    Formato: input(pergunta)<br>
+                    <br>
+                    onde pergunta é uma string opcional que será exibida para 
+                indicar o valor que se espera (i.e., prompt)<br>
+                <br>
+                Exemplo:<br>
+                <br>
+                <code>>>> a = input("Entre com um numero: ")<br>
+                 <-- usuário digita o número<br>
+                    Entre com um numero: 19<br>
+                
+                    >>> print a<br>
+                    
+                19<br></code>
+                    <br>
+                O comando input espera que se digite algo que faça sentido do 
+                lado direito de um sinal de atribuição. Ex:<br>
+                <code>>>> print a<br>
+                    19<br>
+                    >>> b = input()<br>
+                    a<br>
+                    >>> b<br>
+                    19<br>
+                    >>> c = input("entre com uma cadeia de caracteres: ")<br>
+                entre com uma cadeia de caracteres: abc<br>
+                Traceback (most recent call last):<br>
+                     File "<stdin>", line 1, in ?<br>
+                     File "<string>", line 0, in ?<br>
+                NameError: name 'abc' is not defined<br>
+                    >>> c = input("entre com uma cadeia de caracteres: ")<br>
+                entre com uma cadeia de caracteres: "abc"<br>
+                    >>> c<br>
+                'abc'<br></code><br>
+                    
+                
+                <strong>Raw_input:</strong><br><br>
+                
+                É semelhante ao input, mas não tenta interpretar o 
+                que foi digitado como uma expressão<br>
+                O resultado é simplesmente uma string com o texto 
+                digitado
+                Ex.:<br>
+                <code>
+                    >>> nome = raw_input ("Entre seu nome: ")<br>
+                    Entre seu nome: Claudio Esperança<br>
+                    >>> print nome<br>
+                    Claudio Esperança<br>
+                    >>> nome<br>
+                    'Claudio Esperan\xe7a'<br>
+                </code><br>
+                
+                <strong>While:</strong><br><br>
+                
+                Repete uma seqüência de comandos enquanto uma dada expressão 
+                booleana é avaliada como verdadeira<br>
+                Formato: <br>
+                while expressão:<br>
+                     comando<br>
+                     ...<br>
+                     comando<br>
+                Exemplo:<br>
+                    >>> a = 10<br>
+                    >>> while a>8:<br>
+                    ... print a,<br>
+                    ... a = a-1<br>
+                    ...<br>
+                10 9<br>
+                
+                Como em todo comando de repetição, é importante 
+                evitar os chamados “laços infinitos”
+                Ex.:<br>
+                    >>> a = 10<br>
+                    >>> while a>8:<br>
+                    ... print a,<br>
+                    ... a = a+1<br>
+                    ...<br>
+                10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+                27 28 29 30 31 32 33 ...<br><br>
+                
+                <strong>If:</strong><br><br>
+                
+                É o comando condicional por excelência<br>
+                Formatos:<br>
+
+                <code>if expressao:  <-- Executa comandos apenas se expressão for verdadeira<br>
+                       comandos<br>
+                    if expressao:  <-- Executa seq de comandos 1 caso expressão seja verdadeira. <br>
+                       comandos1<br>
+                    else:          <-- Caso contrário, executa seq de comandos 2<br>
+                       comandos2<br>
+                    if expressao1: <-- Executa seq de comandos 1 caso expressão1 seja verdadeira.<br>
+                       comandos1<br>
+                    elif expressao2: |  vários      <-- Caso contrário, testa expressao2 e executa seq de comandos 2 se verdadeira<br>
+                       comandos2      |  desses...<br>
+                    else:<br>
+                       comandos(N)  <-- Caso contrário, executa seq de comandos N</code><br><br>
+                    
+                
+                Exemplo 1<br><br>
+                    <code>
+                        a = input("Entre com um numero:") <br>
+                        if a < 0: <br>
+                             print a," é negativo" <br>
+                            print "Obrigado!" <br>
+                    </code><br>
+                Execução 1 <br>
+                    <code>
+                        Entre com um numero:2 <br>
+                        Obrigado!
+                    </code><br><br>
+                Execução 2: <br>
+                    <code>
+                        Entre com um numero:-2 <br>
+                        -2 é negativo <br>
+                        Obrigado! <br>
+                    </code><br>
+                Exemplo 2 <br><br>
+                    <code>
+                        a = input("Entre com um numero:") <br>
+                        if a < 0: <br>
+                             print a," é negativo" <br>
+                        else: <br>
+                             print a," é zero ou positivo" <br>
+                            print "Obrigado!" <br>
+                    </code><br>
+                Execução 1: <br>
+                    <code>
+                        Entre com um numero:2 <br> 
+                        2 é zero ou positivo <br>
+                        Obrigado! <br>
+                    </code><br>
+                Execução 2: <br>
+                    <code>
+                        Entre com um numero:-2 <br>
+                        -2 é negativo <br>
+                        Obrigado! <br>
+                    </code><br><br>
+                Exemplo 3 <br><br>
+                    <code>
+                        a = input("Entre com um numero:") <br>
+                        if a < 0: <br>
+                             print a," é negativo" <br>
+                        elsif a==0: <br>
+                             print a," é zero" <br>
+                        else: <br>
+                             print a," é positivo" <br>
+                            print "Obrigado!" <br>
+                    </code><br><br>
+                Execução 1: <br>
+                    <code>
+                        Entre com um numero:0 <br>
+                        0 é zero <br>
+                        Obrigado! <br>
+                    </code> <br><br>
+                Execução 2: <br>
+                    <code>
+                        Entre com um numero:2 <br>
+                        2 é positivo <br>
+                        Obrigado! <br>
+                    </code><br><br>
+                
+                <strong>Variáveis:</strong> <br><br>
+                
+                Inteiro: (int) <br>
+                Pode ter centenas de dígitos <br>
+                O padrão é decimal, mas pode usar bases como binária (iniciada com 0b), octal (iniciada com 0o) ou hexadecimal (iniciada com 0x) <br><br>
+                
+                Lógico (ou Booleano): (bool) <br>
+                0 é False e 1 é True <br><br>
+                
+                Número de ponto-flutuante: (float) <br><br>
+                Número Complexo: (complex) <br><br>
+                String (str) <br>
+                Representada por uma sequência de caracteres Unicode, iniciada e terminada por aspas simples ou duplas <br><br>
+                
+                <strong>Operadores únicos:</strong> <br>
+                +: Operador numérico positivo <br>
+                -: Operador numérico negativo <br>
+                not: Operador lógico de negação <br> <br>
+                
+                <strong>Operadores Binários Aritméticos:</strong> <br>
+                <code>
+                    +: Soma <br>
+                    -: Subtração <br>
+                    * : Produto <br>
+                    /: Divisão de ponto flutuante <br>
+                    //: Divisão inteira <br>
+                    %: Resto da divisão inteira <br>
+                    **: Potencialização <br><br>
+                </code>
+                
+                <strong>Operadores Binários Lógicos:</strong> <br>
+                or: Disjunção lógica ou soma lógica <br>
+                and: Conjunção lógica ou produto lógico <br><br>
+                
+                <strong>Operadores Binários Relacionais:</strong> <br>
+                <code>
+                    ==: Igual a <br>
+                    !=: Diferente de <br>
+                    >: Maior que <br>
+                    <: Menor que <br>
+                    >=: Maior ou igual <br>
+                    <=: Menor ou igual <br><br>
+                </code>
+                
+                Expressões Formatadas (operador %(…)): <br>
+                Sintaxe da expressão formatada: <br>
+                texto = “…%formato1 … %formatoN…” %(exp1, …, expN) <br>
+                Formatos mais comuns: <br>
+                d (inteiro), f (número com ponto flutuante) e s (String) <br>
+                Exemplos: <br> <br>
+                
+                <code>
+                    msg = " A media dos numeros é %4.2f" %(8656656.6164134) <br>
+                    
+                    print(msg) <br>
+                    
+                    print("%f + %f = %4.1f" %(15, 9.578421, 15+9.578421 )) <br>
+                    
+                    print("%d + %d = %d" %(5, 7.578421, 5+7.578421 ), end="!!!") <br>
+                </code>
+                
+                Sequência <br>
+                Suite <br>
+                Em Python, ao construir uma sequência de comandos, devemos colocá-los um por linha abaixo do outro, mantendo-os na mesma tabulação. <br><br>
+                
+                Um bloco de comando que possui um ou mais comandos é camado de suite <br><br>
+                
+                <strong>Comentários</strong> <br><br>
+                Comentários simples: iniciados com o caractere # <br>
+                Comentarios com múltiplas linhas: delimitados por “”" “”" <br><br>
+                
+                Estruturas de Repetição Definida (for): <br><br>
+                A estrutura de repetição definida *for deve ser utilizada quando se deseja, um determinado número de vezes, executar uma mesma suite, enumerado ou nao por uma lista de valores. <br><br>
+                
+                Exemplo de uso: <br>
+                
+                <code>
+                    for i in [2,3,4,5,6,7,8,9]: <br>
+                      print(i, end=" ") <br>
+                    print() <br>
+                </code><br><br>
+                <strong>Listas de Valores para uma Repetição for</strong> <br><br>
+                Para criar uma lista para repetições for: <br>
+                
+                range(valor limite) <br>
+                Cria uma lista com P.A. de itens de razão 1, iniciada pelo valor 0 e termina no valor que antecede o limite
+                Exemplo: <br>
+                
+                print(range(7)) <br><br>
+                range(valor inicial, valor limite) <br>
+                Cria uma lista com P.A. de itens de razão 1, iniciada pelo valor inicial e termina no valor que antecede o limite
+                Exemplo: <br>
+                
+                print(range(7,20)) <br><br>
+                range(valor inicial, valor limite, avanço) <br>
+                Cria uma lista com P.A. de itens de razão avanço, iniciada pelo valor inicial e termina no valor que antecede o limite
+                Exemplo: <br>
+                
+                print(range(9,50,3))</p> 
+</main>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<main class="body-2">
+                <h3>Funções:</h3> <br><br>
+
+
+                <p>São suites, comandos e/ou estruturas de controle, ao qual atribuímos um nome e após a sua execução obtemos um valor. <br>
+
+                    A utilização de funções permite que o programa possa ser desenvolvido e testado separadamente, além de permitir a reutilização de algumas partes em diferentes pontos do programa. <br>
+                    
+                    Sendo assim, é possível montar programas mais complexos a partir de funções menores já desenvolvidas e testadas. <br> <br>
+                    
+                    <strong>Declaração de uma função em Python</strong> <br><br>
+                    A função deve ser declarada da seguinte forma: <br>
+                    
+                    <code>
+                        def nomeEscolhido(lista de parâmetros) <br>
+                          suite do corpo da funcao <br>
+                    </code> <br>
+                    onde: <br><br>
+                    
+                    a lista de parâmetros pode ter zero ou mais parâmetros separados por vírgulas <br>
+                    A suite do corpo da função+ deve possuir zero ou mais retornos de valores, expressos por return valor apropriado (caso nenhum valor seja retornado, return None) <br><br>
+                    <strong>Passagem de Parâmetros</strong> <br><br>
+
+                    Caso uma função possa ser aplicada a diferentes valores de entrada, esta função deve conter parâmetros em sua definição. <br><br>
+                    
+                    <strong>Passagem de parâmetro por valor</strong><br><br>
+                    No início da função, os parâmetros sempre são inicializados com a cópia dos ponteiros (referências) para os valores implementados na ativação da função
+                    valor de tipo básico são imutáveis <br>
+                    Valores de tipos estruturados são mutáveis <br>
+                    Os valores podem vir de: <br>
+                    Constantes <br>
+                    Variáveis <br>
+                    Resutlados de funções <br>
+                    Ou seja, resutlado de expressões <br><br>
+                    <strong>Passagem por função</strong><br><br>
+                    Da mesma maneira que por valor, a função pode receber ou retornar outra função definida previamente <br><br>
+                    
+                    <strong>Recursividade</strong><br><br>
+                    Chama-se de função recursiva quando a função possui no seu corpo uma chamada a ela própria <br>
+                    
+                    Exemplo, no cálculo de fatorial: <br>
+                    
+                    
+                    <code>
+                        def fat(n): <br>
+                          if n==0: <br>
+                            return 1 <br>
+                          else: <br>
+                            return n*fat(n-1)     #Aqui esta a chamada recursiva <br>
+                    </code> <br>
+                    <strong>Estrutura de Dados</strong> <br><br>
+                    Vetor <br><br>
+                    Um vetor é um agregado de elementos (também chamados de valores) de um mesmo tipo. <br>
+                    
+                    Imagine um vetor, do qual para a seleção de elementos dentro desse vetor, podemos utilizar um índice ou seletor do elemento que indica sua posição ou ordem. <br>
+                    
+                    <code>
+                        vetor=[4,3,2,1] <br>
+                        
+                        print(vetor[0]) <br>
+                        print(vetor[3]) <br>
+                    </code> <br>
+                    Caracteristicas:<br>
+                    É uma estrutura homogênea<br>
+                    Todos os elementos da estrutura são igualmente acessíveis<br>
+                    cada elementro da estrutura tem um nome próprio<br>
+                    Um vetor pode ser simples ou estruturado<br>
+                    <br>
+                    Acesso a elementos do vetor?<br>
+                    Suponha que se queira somar todos os elementos do vetor?<br>
+                    <br>
+                    <code>
+                        #Utilizando o range()<br>
+                        soma = 0<br>
+                        for i in range(3):<br>
+                          soma = soma + vetor[i]<br>
+                        <br>
+                        #Utilizando o len()<br>
+                        soma = 0<br>
+                        for i in range(len(itens)):<br>
+                          soma = soma + itens[i]<br>
+                        A leitura de um vetor pode ser realizada:<br>
+                        Elemento a elemento<br>
+                        Todas as informações podem ser lidar de uma vez, como uma linha de caracteres, sobre o qual se aplica a operação split para separa-las<br>
+                        Exemplo de leitura:<br>
+                        <br>
+                        #Leitura de todos os valores de uma vez:<br>
+                        valores = input("Digite os valores na mesma linha: ").split()<br>
+                        <br>
+                        #Leitura um de cada vez:<br>
+                        valores=[None]*10<br>
+                        for i in range(len(valores)):<br>
+                          valores[i] = input("Digite um valor: ")<br>
+                        A escrita de um vetor pode ser realizada;<br>
+                        Toda de uma vez<br>
+                        Elemento a elemento<br>
+                        Exemplo de escrita:<br>
+                        <br>
+                        #Todos de uma vez:<br>
+                        numeros= [4,6,2,5,1,25,12,32]<br>
+                        print(numeros)<br>
+                        <br>
+                        #Escrita um de cada vez:<br>
+                        numeros= [4,6,2,5,1,25,12,32]<br>
+                        for x in numeros:<br>
+                          print(x, end=" ")<br>
+                        print()                         #Para pular uma linha<br>
+                        Matriz<br>
+                        A matriz 2D é um vetor de vetores, vejamos um exemplo:<br>
+                        <br>
+                        aposta =  [[" ","X"," "],<br>
+                                  [" "," ","X"],<br>
+                                  [" ","X"," "],<br>
+                                  ["X"," "," "],<br>
+                                  [" ","X"," "],<br>
+                                  [" "," ","X"],<br>
+                                  [" ","X"," "]]<br>
+                        print(aposta)<br>
+                        Para acessar os elementos desse vetor:<br>
+                        <br>
+                        aposta =  [[" ","X"," "],<br>
+                                  [" "," ","X"],<br>
+                                  [" ","X"," "],<br>
+                                  ["X"," "," "],<br>
+                                  [" ","X"," "],<br>
+                                  [" "," ","X"],<br>
+                                  [" ","X"," "]]<br>
+                                  <br>
+                        aposta       #Representa uma matriz de 7 linhas por 3 colunas<br>
+                        aposta[0]    #Representa a primeira linha da matriz<br>
+                        aposta[0][0] #Representa o caractere da primeira linha da primeira coluna<br>
+                        Entrada dinâmica de Vetores e Matrizes<br>
+                        Em python, vetores e matrizes são implementados por listas, uma forma alteranativa é utilizando a operação que anexa um valor ao final de uma lista: <br>append().<br>
+                        <br>
+                        String (Cadeia de Caracteres)<br>
+                    </code>>
+                    Um objeto do tipo str representa uma cadeia de caracteres, de tamnho e valor imutáveis, veja um exemplo de declaração e atribuição:<br>
+                    <br>
+                    nome = "Ana"<br>
+                    print(len(nome)) # confima o comprimento ou quantidade de caracteres na string<br>
+                    Comparação de Strings<br>
+                    comparação lexicografica de strings com os operadores ==,!=, <=, >=, <, ><br>
+                    Indexação de cada caractere<br>
+                    O tipo de String pode ser tratado tambem como vetor, vejamos:<br>
+                    <code>
+                        #Se:<br>
+                        nome = "Ana"<br>
+                        #Então:<br>
+                        print(nome[0])<br>
+                        print(nome[1])<br>
+                        print(nome[2])<br>
+                    </code>
+                    O operador +, quando aplicado a dois Strings a e b retorna uma String concatenada das Strings a e b<br>
+                    <br>
+                    Retornando uma “nova” sub-String de uma String:<br>
+                    <br>
+                    nomeString[posicao inicial : posicao final+1]<br>
+                    Método find(subStringProcurada)
+                    Retorna a posição do indice da primeira ocorrencia da subStringProcurada na String sendo consultada. Caso nao seja encontrada, retorna menor um (-1)<br>
+                    Outros métodos importantes:<br>
+                    replace( subStringProcurada, subStringNova )<br>
+                    Retorna uma copia da string sendo consultada, substituindo<br>
+                    count( subStringProcurada )<br>
+                    Retorna a quantidade de ocorrencias<br>
+                    upper()<br>
+                    Retorna uma cópia da String, convertendo tudo para maiúsculo<br>
+                    lower()<br>
+                    retorna uma cópia da String, convertendo tudo para minusculo<br>
+                    strip()<br>
+                    Retorna uma cópia da String, removendo todos caracteres brancos do início e do final<br>
+                    split()<br>
+                    Retorna uma lista de todas as palavras String<br>
+                    split( subStringSeparadora )<br>
+                    Retorna uma lista de todas as palavras String, sendo o delimitador procurado entre palavras aquele especificado em subStringSeparadora.<br>
+                    Metodos para leitura e escrita:<br>
+                    input(), readline, print, write<br>
+                    Tupla<br>
+                    Uma sequência ordenada de zero ou mais referências a objetos. Tuplas suportam o mesmo fatiamento, o mesmo acesso por iteradores e o mesmo <br>desempacotamento que Vetores e Strings. São imutáveis e pode ser vazia.<br>
+                    <br>
+                    Exemplo:<br>
+                    <br>
+                    vazio = tuple()<br>
+                    print(vazio)<br>
+                    Mais exemplos, agora de tuplas não vazias:<br>
+                    <br>
+                    val = ("abacaxi", 500, 4.99)<br>
+                    print(val)<br>
+                    <br>
+                    #ou ainda:<br>
+                    <br>
+                    val = "abacaxi", 500, 4.99<br>
+                    print(val)<br>
+                    Sendo assim, vetores e strings podem ser empacotados como tuplas através da funcao tuple(), veja:<br>
+                    <br>
+                    trio = tuple([1,2,3]) # ou trio = (1,2,3)<br>
+                    print(trio)<br>
+                    <br>
+                    letras = tuple("aeiou") # ou letras = ("a", "e", "i", "o", "u")<br>
+                    print(letras)<br>
+                    Exemplo de desempacotamento e iteração<br>
+                    Seu conteúdo pode ser facilmente atribuído a variáveis por meio de desempacotamento, veja:<br>
+                    <br>
+                    individuo, altura = ("Maria Jose", 139)<br>
+                    print(individuo)<br>
+                    print(altura)<br>
+                    <br>
+                    #ou ainda:<br>
+                    <br>
+                    (nome, idade) = ("Maria Jose", 139)<br>
+                    print(nome)<br>
+                    print(idade)<br>
+                    <br>
+                    #Iterando sobre os itens de uma tupla:<br>
+                    <br>
+                    tomDePele = ("Marrom", "Amarelo", "Azul", "Branco")<br>
+                    <br>
+                    for cor in tomDePele:<br>
+                      print(cor)<br>
+                    Métodos disponíveis sobre Tuplas<br>
+                    count(valor)<br>
+                    Retorna a quantidade de ocorrencias de um determinado valor da tupla, exemplo:<br>
+                    v = ("morango", 500, 4.99, 500)<br>
+                    print(v.count(500))           #Retorna quantidade<br>
+                    index( valor )<br>
+                    Retorna o índice da primeira ocorrência do valor informado como argumento, exemplo:<br>
+                    v = ("morango", 500, 4.99, 500)<br>
+                    print(v.index(500))            #Retorna indice<br>
+                    Operadores sobre Tuplas<br>
+                    concatenação: a+b<br>
+                    Gera uma nova tupla a partir do conteúdo de a seguido de b<br>
+                    replicação: a*n<br>
+                    Gera uma nova Tupla a partir do conteúdo de (a) repetida n-1 vezes<br>
+                    fatiamento: a[posição inicial : posição final+1]<br>
+                    Gera uma nova Tupla a partir do subconjunto de elementos contidos em a<br>
+                    atribuição incremental: a +=b ou a*=n<br>
+                    Equivalente a concatenação e repetição, porém atribui à variável (a) a referência para a nova tupla gerada<br>
+                    comparação: < , <+ , == , !=, >, >=<br>
+                    Compara item a item<br>
+                    associação: in e not in<br>
+                    Verifica a pertinência de um valor em uma tupla<br>
+                    Listas<br>
+                    Lista<br>
+                    Uma lista é uma sequencia ordenada pelo índice, de zero ou mais referências a objetos.<br>
+                    <br>
+                    Características: * É uma estrutura de dado recursiva * Representada por uma sequência, fechada por colchetes ( [* e *]) * O primeiro elemento esta na posição zero * Lista são mutáveis, podem receber novos elementos, substituir ou remover antigos elementos<br>
+                    <br>
+                    Exemplo:<br>
+                    <br>
+                    #Declarando  uma lista:<br>
+                    salada = []<br>
+                    <br>
+                    #Incluindo valores:<br>
+                    salada = ["manda", "pera", "uva"]<br>
+                    Operações básicas para manipulação de listas:<br>
+                    <br>
+                    Operações de inclusão de novos elementos:<br>
+                    apend( novoElemento ): anexa um novoElemento no final da lista<br>
+                    insert( pos,novoElemento ): insere o novoElemento) na posição pos* da lista, caso essa posição não exista, será criada<br>
+                    Exemplo:<br>
+                    <br>
+                    <br>
+                    #Incluindo valores:<br>
+                    salada = ["manda", "pera", "uva"]<br>
+                    print(salada)<br>
+                    <br>
+                    <br>
+                    salada.append("banana") <br>
+                    print(salada)<br>
+                    <br>
+                    salada.insert(2,"goiaba")<br>
+                    print(salada)<br>
+                    ## ['manda', 'pera', 'uva']<br>
+                    ## ['manda', 'pera', 'uva', 'banana']<br>
+                    ## ['manda', 'pera', 'goiaba', 'uva', 'banana']<br>
+                    Criando uma lista de numeros aleatórios em um intervalo pre estabelecido pelo usuário:<br>
+                    <br>
+                    #Exemplo 1<br>
+                    <br>
+                    #subprogramas<br>
+                    def preencher(listaElems, qtd, min, max):<br>
+                        from random import randint              #Requer pacote com funcao externa<br>
+                        for item in range(qtd):<br>
+                            listaElems.append(randint(min, max))<br>
+                        return None<br>
+                    <br>
+                    #programa principal<br>
+                    qtdNumeros = int(input("A Lista deve ter quantos valores?"))<br>
+                    minimo = int(input("Menor valor da faixa:"))<br>
+                    maximo = int(input("Maior valor da faixa:"))<br>
+                    numeros = []<br>
+                    preencher(numeros, qtdNumeros, minimo, maximo)<br>
+                    print(numeros)<br>
+                    Operações de exclusão: de novos elementos:<br>
+                    pop( ): retorna e remove o último elemento da lista.<br>
+                    pop( pos ): retorna e remove o elemento na posição pos da lista.<br>
+                    remove( x ): remove a primeira ocorrência do item x.<br>
+                    Outras operações úteis com listas:<br>
+                    les( ): retorna o comprimento da lista.<br>
+                    lista.count( elemento ): retorna quantas vezes o elemento aparece na lista<br>
+                    lista.sort( lista ): ordena o conteúdo da lista<br>
+                    Fatiamento de Listas<br>
+                    Fatiamento de Listas:<br>
+                    listaAntiga[posInicio : posFim ]: retorna uma nova lista composta de referências para elementos existentes na listAntiga<br>
+                    Exemplo:<br>
+                    <br>
+                    saladaComposta = ["banana", "caju", "uva", "pera", "manga", "kiwi"]<br>
+                    print(saladaComposta)<br>
+                    saladaSimples = saladaComposta[1:4]<br>
+                    print(saladaSimples)<br>
+                    ## ['banana', 'caju', 'uva', 'pera', 'manga', 'kiwi']<br>
+                    ## ['caju', 'uva', 'pera']<br>
+                    Listas de listas<br>
+                    Os indices fazem referências a novas listas contidas no seu interior<br>
+                    <br>
+                    Veja um exemplo:<br>
+                    <br>
+                    mercado = [["pera", 100, 4.9], ["manga", 20, 3.9], ["uva", 30,5.9], ["caju", 15.35]]<br>
+                    print(mercado)<br>
+                    ## [['pera', 100, 4.9], ['manga', 20, 3.9], ['uva', 30, 5.9], ['caju', 15.35]]<br>
+                    Operando elementos de uma lista de listas<br>
+                    Confira:<br>
+                    <br>
+                    mercado = [["pera", 100, 4.9], ["manga", 20, 3.9], ["uva", 30,5.9], ["caju", 15.35]]<br>
+                    print(mercado)<br>
+                    <br>
+                    <br>
+                    mercado[1][2] *= 0.5  #Manga pela metade do preço<br>
+                    print(mercado)<br>
+                    <br>
+                    mercado[3][1] -= 10  #caju com dez quilos a menos<br>
+                    print(mercado)<br>
+                    <br>
+                    mercado.remove(["uva", 30,5.9])  #O produto uva é removido do mercado<br>
+                    print(mercado)<br>
+                    <br>
+                    mercado.insert(1, ["kiwi", 200, 1.99])  #O produto kiwi é inserido<br>
+                    print(mercado)<br>
+                     <br>
+                    ## [['pera', 100, 4.9], ['manga', 20, 3.9], ['uva', 30, 5.9], ['caju', 15.35]]<br>
+                    ## [['pera', 100, 4.9], ['manga', 20, 1.95], ['uva', 30, 5.9], ['caju', 15.35]]<br>
+                    ## [['pera', 100, 4.9], ['manga', 20, 1.95], ['uva', 30, 5.9], ['caju', 5.35]]<br>
+                    ## [['pera', 100, 4.9], ['manga', 20, 1.95], ['caju', 5.35]]<br>
+                    ## [['pera', 100, 4.9], ['kiwi', 200, 1.99], ['manga', 20, 1.95], ['caju', 5.35]]<br>
+                    Lista (Lisp-Like)<br>
+                    Três operações primitivas do paradigma de programação funcional na lisguagem Lisp (List Processing):<br>
+                    <br>
+                    car( dados ): é a operação seletora que retorna o primeiro elemento de uma lista de dados.<br>
+                    cdr( dados ): é uma operação seletora que retorna uma lista com todos os elementos da lista dados, exceto o primeiro.<br>
+                    cons( item, dados ):é uma operação construtora que retorna uma lista que contem o item como primeiro elemento, seguido pela lista de dados.<br>
+                    Exemplo (trivial):<br>
+                    <br>
+                    def car(dados):<br>
+                      return dados[0]<br>
+                      <br>
+                    def cdr(dados):<br>
+                      return dados[1:len(dados)]<br>
+                    <br>
+                    def cons(item, dados):<br>
+                      return [item] + dados<br>
+                    Utilizando as operações seletoras car e cdr, vejamos uma função recursiva que some o conteúdo de uma lista de numeros:<br>
+                    <br>
+                    <br>
+                    def soma(dados):<br>
+                      if dados==[]:<br>
+                        return 0 <br>
+                      else:<br>
+                        return car(dados) + soma(cdr(dados))<br>
+                    Persistência dos dados<br>
+                    Arquivos<br>
+                    Programas interativos sao diferentes de manusear arquivos<br>
+                    <br>
+                    arquivos podem ser texto<br>
+                    <br>
+                    O arquivo texto é um sequencia de caracteres organizadas em linhas<br>
+                    <br>
+                    em python, a leitura de arquivos é feito da seguinte maneira:<br>
+                    <br>
+                    dados = open(caminho do arquivo, "r") #r: leitura ;<br>
+                                                          #w: apenas escrita;<br>
+                                                          #a: escreve no final do arquivo<br>
+                                                             <br>
+                    dados.close()                         # o arquivo nao sera mais utilizado<br>
+                    <br>
+                                                             <br>
+                    Metodo readline()<br>
+                    Aplicada sob um arquivo txt aberto, retorna uma linha completa, incluind o final da linha (* que pula a linha). Portando o inicio do leitor avança para a proxima linha, veja:<br>
+                    <br>
+                    dados = open("exemplo.txt", "r")<br>
+                    <br>
+                    linha = dados.readline()<br>
+                    <br>
+                    print(linha, end="")<br>
+                    <br>
+                    dados.close()<br>
+                    Leitura do arquivo texto com o metodo readline()<br>
+                    Veja:<br>
+                    <br>
+                    dados_abrir=input("Digite o nome do arquivo que deseja visualizar: ")<br>
+                    <br>
+                    dados = open(dados_abrir, "r")<br>
+                    <br>
+                    linha = dados.readline()<br>
+                    <br>
+                    while linha != "":<br>
+                      print(linha, end="")<br>
+                      linha=dados.readline()<br>
+                    <br>
+                    dados.close()<br>
+                    Outra maneira:<br>
+                    <br>
+                    dados_abrir=input("Digite o nome do arquivo que deseja visualizar: ")<br>
+                    <br>
+                    dados = open(dados_abrir, "r")<br>
+                    <br>
+                    for linha in dados:<br>
+                      print(linha, end="")<br>
+                    dados.close()<br>
+                    Comando readlines()<br>
+                    Funciona apenas para pequenos arquivos, veja:<br>
+                    <br>
+                    dados_abrir = input("Digite o nome do arquivo:")<br>
+                    dados=open(dados_abrir, "r")<br>
+                    linhas = dados.readlines()<br>
+                    <br>
+                    for linha in linhas:<br>
+                      print(linha, end"")<br>
+                      <br>
+                    dados.close()<br>
+                    Produzindo um arquivo de texto com write()<br>
+                    dados=open("teste.txt", "w")<br>
+                    dados.write("qualquercoisa")<br>
+                    Com quebra de linha:<br>
+                    Veja:<br>
+                    <br>
+                    dados=open("teste.txt", "w")<br>
+                    dados.write("qualquercoisa\n")<br>
+                    Mais um exemplo:<br>
+                    <br>
+                    arquivo = input("Digite o nome do arquivo que sera criado:")<br>
+                    <br>
+                    qnt_linhas = int(input("Quantas linhas:"))<br>
+                    <br>
+                    dados = open(arquivo, "w")<br>
+                    <br>
+                    for i in range(qnt_linhas):<br>
+                      nova=input("linha"+str(i+1)+":")<br>
+                      dados.write(nova+"\n")<br>
+                      <br>
+                    dados.close()<br>
+                    Anexando uma nova linha no final de um arquivo<br>
+                    Veja:<br>
+                    <br>
+                    nome=input("Diga o nome do arquivo que deseja anexar")<br>
+                    arquivo=open(nome, "a")<br>
+                    noma_linha = input("Diga a nova linha:")<br>
+                    arquivo.write(nova_linha + "\n")<br>
+                    arquivo.close()</p>
+
+    </main>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <main class="body-2">
+                    <h3>Bibliotecas:</h3>
+
+                    <p>As bibliotecas Python são um conjunto de módulos e funções úteis que reduzem o uso de código no programa. <br> 
+
+                    São mais de 137 mil bibliotecas Python que facilitam a programação dos desenvolvedores, com diversas finalidades. <br>
+ 
+                    Por meio delas, é possível fazer tratamento de dados Python. Há, também, bibliotecas Python data science, bibliotecas Python para automação, dentre outras. <br><br>
+
+                    <strong>Como usar e instalar uma biblioteca no Python?</strong> <br><br>
+                    O uso das bibliotecas Python é bastante simples. Dentro de cada biblioteca podem existir módulos. Dentro dos módulos pode ter uma função específica que você deseja para uma finalidade. <br>
+
+                    E como instalar bibliotecas no Python? Você pode fazer isso usando o prompt de comandos do Windows como administrador. <br>
+
+                    Neste caso, é preciso mudar o diretório para a pasta Scripts (dentro da pasta do Python). Veja alguns exemplos: <br>
+
+                    <code>
+                        Cd C:\Program Files\Python(versão instalada do Python)\Scripts <br>
+                        Cd C:\Program Files\Python36\Scripts <br>
+                        Cd C:\Program Files\Python(versão instalada do Python)-32\Scripts <br>
+                        Cd C:\Program Files\Python36-32\Scripts <br>
+                    </code><br>
+                    Na sequência, basta usar o comando “pip install (nome da biblioteca)” e a instalação irá começar. <br><br>
+
+                    <strong>Pip install dentro do editor do Python</strong><br><br>
+                    O pip install é um ferramenta para instalar bibliotecas Python. Você só precisa instalar uma única vez, ok? Depois, basta importar no seu código se for utilizá-la. <br>
+
+                    Dica: não use o pip install dentro do local onde escrevemos o código em Python, pois não é o local adequado. O ideal é fazer dentro de um terminal ou dentro do prompt de comando do computador. <br>
+
+                    Podemos usar o terminal do PyCharm (editor do Python) para aprender como instalar bibliotecas no Python. Também é possível utilizar o Anaconda Prompt em caso de utilizar o Jupyter (pacote anaconda). <br>
+
+                    Ou seja, em cada editor de Python você terá um local específico para fazer a instalação das bibliotecas Python.  <br><br>
+
+                    <strong>Bibliotecas mais Usadas no Python</strong> <br><br>
+                    Você acabou de aprender que uma biblioteca nada mais é do que um pacote de código que alguém desenvolveu e disponibilizou para outros usuários para facilitar algumas atividades. <br>
+
+                    E quais são as principais bibliotecas Python? Tudo dependerá do objetivo. Como já falamos, existem bibliotecas Python data science, para criação de sites e APIs, bibliotecas Python para automação etc. <br>
+
+                    Confira as principais bibliotecas Python separadas por finalidade. <br><br>
+
+                    <strong>Criação de sites e APIs</strong><br><br>
+
+                    Biblioteca Requests: É muito boa para fazer interações entre APIs e interação com sites. <br>
+                    FrameWork Flask: É um conjunto de bibliotecas/funcionalidades. É uma ferramenta feita para o Python para que você possa criar sites e APIs e é uma ferramenta muita leve. Muito flexível e muito simples de utilizar. <br>
+                    FrameWork Django: Ele também é utilizado para a criação de sites e APIs. O Django já vem mais pronto, mas é algo um pouco mais complexo, então para quem está começando talvez não seja a melhor opção. <br><br>
+
+                    <strong>Ciência de dados e inteligência artificial</strong><br><br>
+
+                    Biblioteca NumPy e Biblioteca Pandas: Essas duas bibliotecas Python permitem trabalhar com dados, tabelas, análises, manipulações de dados. São muito conhecidas para tratamento de dados python, então você provavelmente já deve ter ouvido falar de pelo menos uma das duas. <br>
+                    TensorFlow e Keras: São ferramentas que funcionam muito bem para a criação dos seus modelos de inteligência artificial. <br>
+                    Biblioteca OpenCV: Essa é uma biblioteca para tratamento de imagens, então vai te auxiliar na manipulação tanto de vídeo quanto de imagem. Um exemplo é controlar a sua Webcam utilizando o OpenCV. <br>
+                    Biblioteca Pillow: Essa é uma biblioteca para tratamento de imagens, só que diferente do OpenCV ela é específica para imagens. Um exemplo que temos é utilizar essa biblioteca para converter imagens no Python (converter a extensão de arquivos). <br>
+                    Biblioteca Scikit-learn: É uma biblioteca excelente para modelos de classificação, modelos de regressão, modelos de clustering, entre outras coisas que você queira fazer dentro de inteligência artificial. <br>
+                    Biblioteca NLTK: Essa biblioteca é feita para tratamento de linguagens, análise de sentimento, tratamento de texto, análise de textos, previsão de escrita e outros tipos de linguagem natural. <br>
+                    Biblioteca PyTorch: É uma ferramenta muito boa para deep learning e para acelerar o seu processamento e o processo de construção do seu modelo de inteligência artificial. Mais uma boa opção para tratamento de dados python. <br><br>
+
+                    <strong>Visualização de dados</strong><br><br>
+
+                    Biblioteca Ploty:  Biblioteca gráfica de código aberto gratuita, é construída sobre a biblioteca Plotly JavaScript (plotly.js). Você pode usar para criar visualizações de dados baseadas na web. São mais de 40 tipos de gráficos, inclusive alguns não tão comuns em outras bibliotecas de visualização de dados. Pode ser usado offline. <br>
+                    Biblioteca Matplotlib: É uma das bibliotecas Python para visualização de dados que permite a criação de gráficos e plotagem 2D. É muito útil para uma representação amigável de dados. Você pode usá-la para aplicações matemáticas ou científicas que exigem mais do que eixos únicos na representação gráfica, por exemplo. <br>
+                    Biblioteca Seaborn: É uma das principais bibliotecas python para visualização de dados, pois se baseia em Matplotlib e se integra com as estruturas de dados numpy e pandas. Além das funções de plotagem, executa as funções de agregação estatística e mapeamento para criar gráficos informativos para o usuário. <br><br>
+
+                    <strong>Automações</strong><br><br> 
+
+                    Biblioteca Selenium: É muito utilizada quando falamos de automação web, funciona para busca na internet (web scraping) e automações de processos completos. Funciona até mesmo para o preenchimento de formulários! <br>
+                    Biblioteca Scrapy e Beautiful Soup: Também são bibliotecas que vão te ajudar com o web scraping, que é a obtenção de dados da web de forma automática para que você não precise fazer todo o procedimento de forma manual. <br>
+                    Biblioteca PyAutoGUI: É uma biblioteca que permite você automatizar o seu mouse, teclado e a tela do seu computador. Então vai permitir que você faça uma automação de uma atividade repetitiva você tenha que fazer no seu computador. Isso quer dizer que você consegue automatizar qualquer ação dentro do computador independente do programa. <br>
+                    Biblioteca Pyodbc: É uma biblioteca de integração com banco de dados. <br>
+                    Biblioteca Pywin32: Ela te permite automatizar uma série de coisas no Windows, então isso pode te facilitar bastante caso utilize o Windows. Você vai notar que boa parte das empresas utiliza esse sistema operacional, então vai te ajudar nesses casos. <br><br>
+
+                    <strong>Criação de interfaces gráficos</strong><br><br>
+
+                    Biblioteca Kivy: É uma ferramenta para criação de telas onde as pessoas podem interagir sem precisar visualizar o código por trás. O mesmo código no Kivy funciona em qualquer plataforma, seja Linux, Windows, Mac, IOs ou Android. <br>
+                    Biblioteca Tkinter: É a biblioteca mais simples para poder começar com interfaces gráficas, então para telas simples é a mais recomendada. Ele já vem dentro do Python, então nem vai precisar fazer a instalação. <br>
+                    Biblioteca PyQt5: Também serve para criar telas para os seus programas, mas para programas mais complexos diferente do tkinter que é mais simples.</p>
         </div>
     </main>
     
