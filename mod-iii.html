@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <title>Início</title>
+</head>
+<body>
+    <header>
+        <div class="logo-1">
+            <div class="links">
+                <a href="index.html" class="links"><h1 class="logo-1" id="name-h">Moduthon</h1></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="body-2">
+        <div class="body-2">
+            <h3>Programas avançados:</h3>
+
+
+<p>
+    DateTime: <br>
+    
+    Em Python, data e hora não são um tipo de dados próprio, mas um módulo denominado datetime pode ser importado para trabalhar com a data e também com a hora. O módulo Datetime vem integrado ao Python, portanto, não há necessidade de instalá-lo externamente.
+    O módulo Datetime fornece classes para trabalhar com data e hora. Essas classes fornecem várias funções para lidar com datas, horas e intervalos de tempo. Data e data e hora são um objeto em Python, portanto, quando você os manipula, está na verdade manipulando objetos e não strings ou carimbos de data / hora.<br><br> 
+    
+    As classes datetime são categorizadas em 6 classes principais - <br><br>
+    
+    data - Uma data ingênua idealizada, assumindo que o calendário gregoriano atual sempre esteve, e sempre estará, em vigor. Seus atributos são ano, mês e dia.<br>
+    hora - uma hora idealizada, independente de qualquer dia em particular, assumindo que todo dia tem exatamente 24 * 60 * 60 segundos. Seus atributos são hora, minuto, segundo, microssegundo e tzinfo.<br>
+    datetime - é uma combinação de data e hora junto com os atributos ano, mês, dia, hora, minuto, segundo, microssegundo e tzinfo.
+    timedelta - Uma duração que expressa a diferença entre duas instâncias de data, hora ou data e hora para resolução de microssegundos.<br>
+    tzinfo - Fornece objetos de informação de fuso horário.<br>
+    fuso horário - Uma classe que implementa a classe base abstrata tzinfo como um deslocamento fixo do UTC (Novo na versão 3.2).<br>
+    <br>
+    Aula de encontro<br><br>
+    Quando um objeto desta classe é instanciado, ele representa uma data no formato AAAA-MM-DD. O construtor desta classe precisa de três argumentos obrigatórios ano, mês e data.<br><br>
+    
+    Sintaxe do construtor:<br><br>
+    
+    class datetime.date(year, month, day)<br>
+    Os argumentos devem estar no seguinte intervalo -<br><br>
+    
+    MINYEAR <= ano <= MAXYEAR<br>
+    1 <= mês <= 12<br>
+    1 <= dia <= número de dias em determinado mês e ano<br>
+    Nota - Se o argumento não for um inteiro, ele levantará um TypeError e se estiver fora do intervalo um ValueError será gerado.<br><br>
+    
+    
+    
+    # Python program to<br>
+    # demonstrate date class<br><br>
+    
+    # import the date class<br>
+    from datetime import date<br><br>
+    
+    # initializing constructor<br>
+    # and passing arguments in the<br>
+    # format year, month, date<br>
+    my_date = date(1996, 12, 11)<br><br>
+    
+    print("Date passed as argument is", my_date)<br><br>
+    
+    # Uncommenting my_date = date(1996, 12, 39)<br>
+    # will raise an ValueError as it is<br>
+    # outside range<br><br>
+    
+    # uncommenting my_date = date('1996', 12, 11)<br>
+    # will raise a TypeError as a string is<br>
+    # passed instead of integer<br>
+    Saída:<br><br>
+    
+    Date passed as argument is 1996-12-11<br>
+    Traceback (most recent call last):<br>
+      File "/home/ccabfb570d9bd1dcd11dc4fe55fd6ba2.py", line 14, in<br>
+        my_date = date(1996, 12, 39)<br>
+    ValueError: day is out of range for month<br><br>
+    
+    Traceback (most recent call last):<br>
+      File "/home/53b974e10651f1853eee3c004b48c481.py", line 18, in<br>
+        my_date = date('1996', 12, 11)<br>
+    TypeError: an integer is required (got type str)<br><br>
+    Data atual<br><br>
+    Para retornar a data local atual, a função today() da classe de data é usada. A função today() vem com vários atributos (ano, mês e dia). Eles podem ser impressos individualmente.<br><br>
+    
+    # Python program to<br>
+    # print current date<br><br>
+    
+    from datetime import date<br><br>
+    
+    # calling the today<br>
+    # function of date class<br>
+    today = date.today()<br><br>
+    
+    print("Today's date is", today)<br><br>
+    
+    # Printing date's components<br>
+    print("Date components", today.year, today.month, today.day)<br>
+    Saída:<br><br>
+    
+    Today's date is 2019-10-25<br>
+    Date components 2019 10 25<br>
+    As diferentes funções disponíveis na classe de data são -<br><br>
+    
+    NOME DA FUNÇÃO	DESCRIÇÃO<br><br>
+    fromtimestamp (timestamp)	Retorna a data local correspondente ao carimbo de data / hora POSIX<br>
+    fromordinal (ordinal)	Retorne a data correspondente ao ordinal gregoriano proléptico, onde 1 de janeiro do ano 1 tem o ordinal 1.<br>
+    fromisoformat (date_string)	Retorne uma data correspondente a uma string_de_data fornecida no formato AAAA-MM-DD:<br>
+    fromisocalendar (ano, semana, dia)	Retorne uma data correspondente à data do calendário ISO especificada por ano, semana e dia.
+    Aula de tempo<br>
+    O objeto Time representa a hora local, independente de qualquer dia.<br><br>
+    
+    Sintaxe do construtor:<br><br>
+    
+    class datetime.time(hour=0, minute=0, second=0, microsecond=0, tzinfo=None, *, fold=0)<br>
+    Todos os argumentos são opcionais. tzinfo pode ser None, caso contrário, todos os atributos devem ser inteiros no intervalo a seguir -<br><br>
+    
+    0 <= hora < 24<br>
+    0 <= minuto < 60<br>
+    0 <= segundo < 60<br>
+    0 <= microssegundo < 1000000<br>
+    dobrar em [0, 1]<br>
+    # Python program to<br>
+    # demonstrate time class<br><br>
+    
+    from datetime import time<br><br>
+    
+    # calling the constructor<br>
+    my_time = time(13, 24, 56)<br><br>
+    
+    print("Entered time", my_time)<br><br>
+    
+    # calling constructor with 1<br>
+    # argument<br>
+    my_time = time(minute = 12)<br>
+    print("\nTime with one argument", my_time)<br><br>
+    
+    # Calling constructor with<br>
+    # 0 argument<br>
+    my_time = time()<br>
+    print("\nTime without argument", my_time)<br><br>
+    
+    # Uncommenting time(hour = 26)<br>
+    # will rase an ValueError as<br>
+    # it is out of range<br><br>
+    
+    # uncommenting time(hour ='23')<br>
+    # will raise TypeError as<br>
+    # string is passed instead of int<br>
+    Saída:<br><br>
+    
+    Entered time 13:24:56<br><br>
+    
+    Time with one argument 00:12:00<br><br>
+    
+    Time without argument 00:00:00<br>
+    Traceback (most recent call last):<br>
+      File "/home/95ff83138a1b3e67731e57ec6dddef25.py", line 21, in<br>
+        print(time(hour=26))<br>
+    ValueError: hour must be in 0..23<br><br>
+    
+    Traceback (most recent call last):<br>
+      File "/home/fcee9ba5615b0b74fc3ba39ec9a789fd.py", line 21, in<br>
+        print(time(hour='23'))<br>
+    TypeError: an integer is required (got type str)<br><br>
+    
+    Depois de criar um objeto de tempo, seus atributos também podem ser impressos separadamente.<br><br>
+    
+    from datetime import time<br><br>
+    
+    Time = time(11, 34, 56)<br><br>
+    
+    print("hour =", Time.hour)<br>
+    print("minute =", Time.minute)<br>
+    print("second =", Time.second)<br>
+    print("microsecond =", Time.microsecond)<br>
+    Saída:<br><br>
+    
+    hour = 11<br>
+    minute = 34<br>
+    second = 56<br>
+    microsecond = 0<br>
+    Aula de data e hora<br>
+    Informações sobre data e hora estão contidas nesta classe. Como um objeto de data, datetime assume o calendário gregoriano atual estendido em ambas as direções; como um objeto de tempo, datetime assume que há exatamente 3600 * 24 segundos em cada dia.<br><br>
+    
+    Sintaxe do construtor:<br><br>
+    
+    classe datetime.datetime (ano, mês, dia, hora = 0, minuto = 0, segundo = 0, microssegundo = 0, tzinfo = Nenhum, *, dobra = 0)<br><br>
+    
+    
+    Os argumentos de ano, mês e dia são obrigatórios. tzinfo pode ser Nenhum, o resto todos os atributos devem ser um número inteiro no intervalo a seguir -<br><br>
+    
+    MINYEAR <= ano <= MAXYEAR<br>
+    1 <= mês <= 12<br>
+    1 <= dia <= número de dias em determinado mês e ano<br>
+    0 <= hora < 24<br>
+    0 <= minuto < 60<br>
+    0 <= segundo < 60<br>
+    0 <= microssegundo < 1000000<br>
+    dobrar em [0, 1]<br>
+    Nota - Passar um argumento diferente de inteiro levantará um TypeError e os argumentos passign fora do intervalo levantará ValueError.<br><br>
+    
+    # Python program to<br>
+    # demonstrate datetime object<br><br>
+    
+    from datetime import datetime<br><br>
+    
+    # Initializing constructor<br>
+    a = datetime(1999, 12, 12)<br>
+    print(a)<br><br>
+    
+    # Initializing constructor<br>
+    # with time parameters as well<br>
+    a = datetime(1999, 12, 12, 12, 12, 12, 342380)<br>
+    print(a)<br>
+    Saída:<br><br>
+    
+    1999-12-12 00:00:00<br>
+    1999-12-12 12:12:12.342380<br>
+    Depois de criar um objeto datetime, seus atributos também podem ser impressos separadamente.<br><br>
+    
+    from datetime import datetime<br><br>
+    
+    a = datetime(1999, 12, 12, 12, 12, 12)<br><br>
+    
+    print("year =", a.year)<br>
+    print("month =", a.month)<br>
+    print("hour =", a.hour)<br>
+    print("minute =", a.minute)<br>
+    print("timestamp =", a.timestamp())<br>
+    Saída:<br><br>
+    
+    year = 1999<br>
+    month = 12<br>
+    hour = 12<br>
+    minute = 12<br>
+    timestamp = 945000732.0<br>
+    Data e hora atuais<br>
+    Você pode imprimir a data e a hora atuais usando a função now(). A função now() retorna a data e hora locais atuais.<br><br>
+    
+    from datetime import datetime<br><br>
+    
+    # Calling now() function<br>
+    today = datetime.now()<br><br>
+    
+    print("Current date and time is", today)<br>
+    Saída:<br><br>
+    
+    Current date and time is 2019-10-25 11:12:11.289834<br>
+    Outras funções da classe datetime são -<br><br>
+    
+    NOME DA FUNÇÃO	DESCRIÇÃO<br><br>
+    utcnow()	Retorna a data e hora UTC atuais, com tzinfo Nenhum.<br>
+    fromtimestamp (timestamp, tz = Nenhum)	Retorne a data e hora local correspondentes ao carimbo de data / hora POSIX.
+    utcfromtimestamp (timestamp)	Retorne a data e hora UTC correspondente ao carimbo de data / hora POSIX, com tzinfo Nenhum.
+    fromordinal (ordinal)	Retorne a data e hora correspondente ao ordinal gregoriano proléptico, em que 1 de janeiro do ano 1 tem o ordinal 1.<br>
+    combinar (data, hora, tzinfo = self.tzinfo)	Retorne um novo objeto datetime cujos componentes de data são iguais aos do objeto de data fornecido e cujos componentes de tempo são iguais aos do objeto de tempo fornecido.<br>
+    fromisoformat (date_string)	Retorne um datetime correspondente a date_string em um dos formatos emitidos por date.isoformat() e datetime.isoformat().<br>
+    strptime (string_de_data, formato)	Retorne uma data e hora correspondente a date_string, analisada de acordo com o formato.<br>
+    Aula Timedelta<br>
+    A função Python timedelta() está presente na biblioteca datetime, que geralmente é usada para calcular diferenças em datas e também pode ser usada para manipulações de datas em Python. É uma das maneiras mais fáceis de realizar manipulações de datas.<br><br>
+    
+    Sintaxe do construtor:<br><br>
+    
+    class datetime.timedelta (dias = 0, segundos = 0, microssegundos = 0, milissegundos = 0, minutos = 0, horas = 0, semanas = 0)
+    Retorna: Data<br><br>
+    
+    
+    # Timedelta function demonstration<br><br>
+    
+    from datetime import datetime, timedelta<br><br>
+    
+    
+    # Using current time<br>
+    ini_time_for_now = datetime.now()<br><br>
+    
+    # printing initial_date<br>
+    print ("initial_date", str(ini_time_for_now))<br><br>
+    
+    # Calculating future dates<br>
+    # for two years<br>
+    future_date_after_2yrs = ini_time_for_now + timedelta(days = 730)<br><br>
+    
+    future_date_after_2days = ini_time_for_now + timedelta(days = 2)<br><br>
+    
+    # printing calculated future_dates<br>
+    print('future_date_after_2yrs:', str(future_date_after_2yrs))<br>
+    print('future_date_after_2days:', str(future_date_after_2days))<br>
+    Saída:<br><br>
+    
+    initial_date 2019-10-25 12:01:01.227848<br>
+    future_date_after_2yrs: 2021-10-24 12:01:01.227848<br>
+    future_date_after_2days: 2019-10-27 12:01:01.227848<br>
+    A diferença de horário também pode ser encontrada usando esta classe.<br><br>
+    
+    
+    # Timedelta function demonstration<br>
+    from datetime import datetime, timedelta<br><br>
+    
+    # Using current time<br>
+    ini_time_for_now = datetime.now()<br><br>
+    
+    # printing initial_date<br>
+    print ("initial_date", str(ini_time_for_now))<br><br>
+    
+    # Some another datetime<br>
+    new_final_time = ini_time_for_now + \<br>
+                     timedelta(days = 2)<br><br>
+    
+    # printing new final_date<br>
+    print ("new_final_time", str(new_final_time))<br><br>
+    
+    
+    # printing calculated past_dates<br>
+    print('Time difference:', str(new_final_time - \<br>
+                                 ini_time_for_now))<br>
+    Saída:<br><br>
+    
+    initial_date 2019-10-25 12:02:32.799814<br>
+    new_final_time 2019-10-27 12:02:32.799814<br>
+    Time difference: 2 days, 0:00:00<br>
+    Aula Tzinfo<br>
+    Esta é uma classe base abstrata, o que significa que esta classe não deve ser instanciada diretamente. Uma instância de (uma subclasse concreta de) tzinfo pode ser passada para os construtores de objetos datetime e time. Os últimos objetos veem seus atributos como estando na hora local, e o objeto tzinfo suporta métodos que revelam o deslocamento da hora local do UTC, o nome do fuso horário e o deslocamento do DST, todos relativos a um objeto de data ou hora passado a eles. Para saber mais sobre esta aula clique aqui .<br><br>
+    
+    Classe de fuso horário<br><br>
+    A classe de fuso horário é uma subclasse de tzinfo, cada instância da qual representa um fuso horário definido por um deslocamento fixo do UTC.<br><br>
+    
+    Sintaxe do construtor:<br><br>
+    
+    class datetime.timezone(offset, name=None)<br>
+    O argumento de deslocamento deve ser especificado como um objeto timedelta que representa a diferença entre a hora local e o UTC.<br>
+    
+    Observação - ValueError será gerado se o deslocamento não estiver entre -timedelta (horas = 24) e timedelta (horas = 24).<br><br>
+    
+    Sleep:<br><br>
+    
+    1. Usando time.sleep() função<br>
+    A maneira padrão de adicionar um atraso de tempo em Python é chamando o sleep() função do time módulo. Ele funciona suspendendo a execução do thread de chamada pelo número especificado de segundos, que pode ser um valor de ponto flutuante.<br><br>
+    
+    from time import sleep<br><br>
+    
+    if _name_ == '_main_':<br>
+    
+        delay = 1        # em segundos<br>
+    
+        print('Go to sleep…')<br>
+        sleep(delay)<br>
+        print('Back to work…')<br><br>
+    
+    2. Usando threading.Event.wait função<br>
+    Outra alternativa é utilizar o Event.wait função no threading módulo. Veja como ficaria o código:<br>
+    
+    from threading import Event<br><br>
+    
+    if _name_ == '_main_':<br>
+    
+        delay = 1        # em segundos<br>
+    
+        print('Go to sleep…')<br>
+        Event().wait(delay)<br>
+        print('Back to work…')<br><br>
+    
+    3. Usando threading.Timer class<br>
+    Se você precisar atrasar a execução de uma função específica em vez de interromper a execução de todo o programa, considere usar o threading.Timer Classe Python, conforme mostrado abaixo:<br>
+    
+    from threading import Timer<br><br>
+    
+    def foo(delay):<br>
+        print(f'foo() called after {delay}s delay')<br>
+    
+    if _name_ == '_main_':<br>
+    
+        delay = 1        # em segundos<br>
+    
+        print('Timer class demo')<br>
+    
+        # chama foo() após 1 segundo<br>
+        t = Timer(delay, foo, [delay])<br>
+        t.start()<br>
+    
+        print('foo() will be executed in 1 seconds…')<br><br>
+    
+    Winsound:<br><br>
+    
+    objeto ou arquivo com um conjunto de atributos ou funções, específicos para a tarefa de gerar ou reproduzir som ou arquivo de som. Nota: O módulo winsound é definido apenas para execução em uma plataforma Windows, daí o nome WINsound. Como o módulo winsound é embutido, não há necessidade de instalá-lo antes de executá-lo. A ação básica seria<br><br>
+    
+    import winsound<br><br>
+    
+    e, em seguida, com base no tipo de saída que você deseja, digite as seguintes funções:<br><br>
+    
+    winsound.Beep( ) - A funcionalidade dedicada a este método é gerar um som de 'Beep'. No entanto, o usuário é obrigado a inserir o valor da frequência e a duração do som (estes são parâmetros que devem ser passados ​​ao chamar a função). Nota: A frequência deve estar na faixa de 37 a 32.767 hertz.<br><br>
+    
+    import winsound<br><br>
+    
+    # frequency is set to 500Hz<br>
+    freq = 500<br><br>
+    
+    # duration is set to 100 milliseconds<br>
+    dur = 100<br><br>
+    
+    winsound.Beep(freq, dur)<br><br>
+    
+    Resultado:<br>
+    O sistema Windows produzirá um som de 'Beep' com a frequência especificada para o período de tempo determinado.<br>
+    
+    Com base no código acima, as coisas podem ser levadas para outro nível implementando um loop 'for' para incrementar a frequência e a duração. Isso foi feito no código abaixo:<br><br>
+    
+    import winsound<br><br>
+    
+    freq = 100<br>
+    dur = 50<br><br>
+    
+    # loop iterates 5 times i.e, 5 beeps will be produced.<br>
+    for i in range(0, 5):<br>
+        winsound.Beep(freq, dur)<br>
+        freq+= 100<br>
+        dur+= 50<br><br>
+    
+    Resultado:<br><br>
+    Notas consecutivas com diferenças de frequência de 100Hz e duração de tempo 50 milissegundos maior
+    do que a duração de tempo anterior são produzidos.<br>
+    
+    winsound.PlaySound( ) - Com a função PlaySound, as coisas podem ficar um pouco avançadas, para não dizer interessantes. Tenha em mente que esta função é compatível apenas com arquivos .wav. Dois parâmetros são passados ​​na função: ‘filename’ e o sinalizador – winsound.SND_FILENAME, que é necessário para que a API da plataforma faça referência ao arquivo de saída. As bandeiras são as definidas abaixo:<br>
+    
+    SND_FILENAME - O parâmetro de som é o nome de um arquivo WAV.<br>
+    SND_LOOP - Reproduzir o som repetidamente<br>
+    SND_MEMORY - O parâmetro de som para PlaySound() é uma imagem de memória de um arquivo WAV, como um objeto semelhante a bytes.<br>
+    SND_ASYNC - Retorna imediatamente, permitindo que os sons sejam reproduzidos de forma assíncrona.<br>
+    SND_NODEFAULT - Se o som especificado não puder ser encontrado, não reproduza o som padrão do sistema.<br>
+    SND_NOSTOP - Não interrompe os sons que estão sendo reproduzidos.<br><br>
+    
+    Exemplo:<br><br>
+    
+    import winsound<br><br>
+    
+    print("Playing the file 'Welcome.wav'")<br><br>
+    
+    # winsound.PlaySound('filename', flag)<br>
+    winsound.PlaySound('Welcome.wav', winsound.SND_FILENAME)<br><br>
+    
+    Resultado:<br><br>
+    O respectivo arquivo de áudio chamado 'Welcome.wav' é executado.<br>
+    SND_ALIAS - O parâmetro de som deve ser interpretado como um nome de associação de som do painel de controle. As chaves de registro do Windows estão associadas a nomes de som. Se o registro não contiver esse nome, reproduza o som padrão do sistema, a menos que SND_NODEFAULT. Todos os sistemas Win32 suportam o seguinte:<br><br>
+    
+    SystemAsterisk - Asterisco<br>
+    SystemExclamation - Exclamação<br>
+    SystemExit - Sair do Windows<br>
+    SystemHand - Parada Crítica<br>
+    SystemQuestion - Pergunta<br><br>
+    
+    Exemplo:<br><br>
+    
+    import winsound<br><br>
+    
+    
+    # Play Windows question sound<br>
+    winsound.PlaySound("SystemQuestion", winsound.SND_ALIAS)<br><br>
+    
+    Resultado:<br><br>
+    Reproduzir som de pergunta do Windows<br>
+    Existem várias outras funções winsound, a maioria das quais são específicas para tarefas específicas, algumas das quais lidam com parâmetros de tempo de execução. No entanto, as funções mencionadas acima devem ser suficientes, desde que a ideia seja brincar para ter uma ideia do que pode ser feito.<br><br>
+    
+    Socket:<br><br>
+    
+    O uso de sockets é importante para criar programas que possam<br>
+    comunicar-se com diferentes computadores para a troca de informações. Com o uso de sockets é possível fazer aplicações
+    que respondam a requisições de outros computadores ou troquem informações entre si para manterem-se funcionando em
+    uma rede.<br>
+    Sockets consistem em objetos que fornecem um padrão para aplicações que trabalham em rede e se utilizam dos protocolos
+    de rede (tcp, udp, ftp, etc). O python utiliza sockets através da classe socket, que deve ser importada em todos os programas
+    que necessitem a utilizar obedecendo o formato:<br><br>
+    
+    import socket<br><br>
+    
+    Programas que utilizam sockets trabalham sempre em formato cliente-servidor, e para isto é sempre necessário criar o
+    programa servidor, que escutará conexões em uma porta, e o programa cliente, que fará a conexão a algum socket disponível
+    em alguma porta. Os principais comandos para uso de sockets são ilustrados abaixo:<br><br>
+    
+    accept( ) - Aceita uma nova conexão e retorna os valores: o novo objeto socket e o endereço que o socket está comunicando.
+    bind(hostname,port) - Conecta o socket ao endereço da porta.<br>
+    close() - Fecha o socket.<br>
+    connect(hostname,port) - Conecta-se com outro socket, que pode ser externo ou local. Para conexões locais utiliza-se localhost ou 127.0.0.1<br>
+    getpeername() - Retorna o endereço IP e a porta na qual o socket está conectado.<br>
+    getsocketnome() - Retorna o endereço IP da porta do próprio socket.<br>
+    listen(max_connections) - Inicia ouvindo a porta e fica esperando outras conexões. O sistema operacional recusa novas conexões quando ela atingir o valor máximo de conexões.<br>
+    send(string) - Envia uma string de dados pelo socket.<br><br>
+    
+    Para a criação de programas que utilizem sockets no lado do servidor é necessário principalmente o uso dos seguintes
+    métodos:<br>
+    objetoSocket = socket.socket(socket.AF_INET,socket.SOCK_STREAM) -> para definir o protocolo a
+    ser utilizado.<br>
+    objetoSocket.bind((host,porta)) -> iniciando a escuta de conexões no lado do servidor.<br>
+    objetoSocket.listen(1) -> realizando o controle de conexões simultâneas que o servidor
+    suportará.<br>
+    objetoSocket.send(dados) -> para enviar dados.<br>
+    objetoSocket.recv(1024) -> para receber dados controlando o tamanho do buffer.<br><br>
+    
+    Para a criação de programas que utilizem sockets no lado do cliente é necessário principalmente o uso dos seguintes
+    métodos:<br>
+    .socket(socket.AF_INET,socket.SOCK_STREAM) -> para definir o protocolo a ser utilizado.<br>
+    .connect((servidor,porta)) -> para criar o objeto de conexão que irá conectar em um servidor.<br>
+    .send(dados) -> para enviar dados.<br>
+    .recv(1024) -> para receber dados controlando o tamanho do buffer.<br>
+    Exemplos de programa utilizando sockets:<br>
+    Programa Servidor: Libera conexões para serem utilizadas (bind)<br><br>
+
+    import socket<br>
+    HOST, PORT = 172.0.0.1, 20000<br><br>
+
+    tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+    tcp_server_socket.bind((HOST, PORT))<br>
+    tcp_server_socket.listen(1)<br>
+    conn, addr = tcp_server_socket.accept()<br>
+    print 'connected by', addr<br>
+    while 1:<br>
+       data = conn.recv(1024)<br>
+       if not data: break<br>
+       print "\nReceived message'", data,"'"<br>
+    conn.close()<br><br>
+
+    Programa Cliente: Se conecta a um servidor que aguarda conexões <br><br>
+
+    import socket<br>
+    HOST, PORT = 172.0.0.1, 20000<br><br>
+
+    tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)<br>
+    tcp_server_socket.connect((HOST, PORT))<br>
+    tcp_server_socket.send('Hello, world')<br>
+    data = tcp_server_socket.recv(1024)<br>
+    tcp_server_socket.close()<br>
+    print 'Received', repr(data)<br><br>
+
+        sqlite3: <br><br>
+
+    Conectando e desconectando do banco<br>
+    Podemos criar o banco de dados de duas formas: na memória RAM<br><br>
+
+    # conectando...<br>
+    conn = sqlite3.connect(':memory:')<br>
+    ou persistindo em um banco de dados, vamos usar sempre este caso.<br><br>
+
+    # conectando...<br>
+    conn = sqlite3.connect('clientes.db')<br>
+    Uma sintaxe mínima para se conectar a um banco de dados é:<br><br>
+
+    # connect_db.py<br>
+    # 01_create_db.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    conn.close()<br>
+    O último método desconecta do banco.<br><br>
+
+    Considere um arquivo para cada operação.<br><br>
+
+    Nota: Os arquivos estão numerados apenas para sugerir uma sequência.<br><br>
+
+    Criando um banco de dados<br>
+    O código para criar um banco de dados é o mesmo mencionado anteriormente.<br><br>
+
+    Para rodar este programa abra o terminal e digite:<br><br>
+
+    $ python3 01_create_db.py<br>
+    $ ls *.db<br>
+    Digitando ls você verá que o banco foi criado.<br><br>
+
+    Criando uma tabela<br>
+    Para criar uma tabela no banco de dados usamos dois métodos fundamentais:<br><br>
+
+    cursor: é um interador que permite navegar e manipular os registros do bd.<br>
+    execute: lê e executa comandos SQL puro diretamente no bd.<br>
+    # 02_create_schema.py<br>
+    import sqlite3<br><br>
+
+    # conectando...<br>
+    conn = sqlite3.connect('clientes.db')<br>
+    # definindo um cursor<br>
+    cursor = conn.cursor()<br>
+
+    # criando a tabela (schema)<br>
+    cursor.execute("""<br>
+    CREATE TABLE clientes (<br>
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,<br>
+            nome TEXT NOT NULL,<br>
+            idade INTEGER,<br>
+            cpf     VARCHAR(11) NOT NULL,<br>
+            email TEXT NOT NULL,<br>
+            fone TEXT,<br>
+            cidade TEXT,<br>
+            uf VARCHAR(2) NOT NULL,<br>
+            criado_em DATE NOT NULL<br>
+    );<br>
+    """)<br><br>
+
+    print('Tabela criada com sucesso.')<br>
+    # desconectando...<br>
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 02_create_schema.py<br>
+    $ sqlite3 clientes.db '.tables'<br>
+    $ sqlite3 clientes.db 'PRAGMA table_info(clientes)'<br>
+    Digitando sqlite3 clientes.db '.tables' você verá que a tabela foi criada.<br><br>
+
+    E o comando sqlite3 clientes.db 'PRAGMA table_info(clientes)' retorna os campos da tabela.<br><br>
+
+    Nota: A única diferença, caso você use Python 2 é no print, onde você deve tirar os parênteses. E no início do arquivo é recomendável que se defina a codificação utf-8, que no caso do Python 3 já é padrão.<br><br>
+
+    # 02_create_schema.py<br>
+    # -- coding: utf-8 --<br>
+    # usando Python 2<br>
+    import sqlite3<br>
+    ...<br>
+    print 'Tabela criada com sucesso.'<br>
+    Agora vamos fazer o CRUD. Começando com a letra<br><br>
+
+    Create - Inserindo um registro com comando SQL<br>
+    A única novidade aqui é o método commit(). É ele que grava de fato as alterações na tabela. Lembrando que uma tabela é alterada com as instruções SQL ``INSERT, UPDATE`` e ``DELETE``.<br><br>
+
+    # 03_create_data_sql.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    # inserindo dados na tabela<br>
+    cursor.execute("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES ('Regis', 35, '00000000000', 'regis@email.com', '11-98765-4321', 'Sao Paulo', 'SP', '2014-06-08')<br>
+    """)<br><br>
+
+    cursor.execute("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES ('Aloisio', 87, '11111111111', 'aloisio@email.com', '98765-4322', 'Porto Alegre', 'RS', '2014-06-09')<br>
+    """)<br><br>
+
+    cursor.execute("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES ('Bruna', 21, '22222222222', 'bruna@email.com', '21-98765-4323', 'Rio de Janeiro', 'RJ', '2014-06-09')<br>
+    """)<br><br>
+
+    cursor.execute("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES ('Matheus', 19, '33333333333', 'matheus@email.com', '11-98765-4324', 'Campinas', 'SP', '2014-06-08')<br>
+    """)<br><br>
+
+    # gravando no bd<br>
+    conn.commit()<br><br>
+
+    print('Dados inseridos com sucesso.')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 03_create_data_sql.py<br>
+    Inserindo n registros com uma tupla de dados<br>
+    Usando uma lista podemos inserir vários registros de uma vez, e o método executemany faz essa ação.<br><br>
+
+    # 04_create_data_nrecords.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    # criando uma lista de dados<br>
+    lista = [(<br>
+        'Fabio', 23, '44444444444', 'fabio@email.com', '1234-5678', 'Belo Horizonte', 'MG', '2014-06-09'),<br>
+        ('Joao', 21, '55555555555', 'joao@email.com',<br>
+        '11-1234-5600', 'Sao Paulo', 'SP', '2014-06-09'),<br>
+        ('Xavier', 24, '66666666666', 'xavier@email.com', '12-1234-5601', 'Campinas', 'SP', '2014-06-10')]<br><br>
+
+    # inserindo dados na tabela<br>
+    cursor.executemany("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES (?,?,?,?,?,?,?,?)<br>
+    """, lista)<br><br>
+
+    conn.commit()<br><br>
+
+    print('Dados inseridos com sucesso.')<br><br>
+
+    conn.close()<br>
+    Observe o uso de ? isto significa que no lugar de cada ? entrará os valores da lista na sua posição respectiva. É o que nós chamamos de parâmetros de entrada.<br><br>
+
+    Para executar digite no terminal:<br><br>
+
+    $ python3 04_create_data_nrecords.py<br>
+    Inserindo um registro com parâmetros de entrada definido pelo usuário<br>
+    Neste exemplo usaremos parâmetros de entrada, que deverá ser digitado pelo usuário. Esta é a forma mais desejável de entrada de dados porque o usuário pode digitar os dados em tempo de execução.<br><br>
+
+    # 05_create_data_param.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    # solicitando os dados ao usuário<br>
+    p_nome = input('Nome: ')<br>
+    p_idade = input('Idade: ')<br>
+    p_cpf = input('CPF: ')<br>
+    p_email = input('Email: ')<br>
+    p_fone = input('Fone: ')<br>
+    p_cidade = input('Cidade: ')<br>
+    p_uf = input('UF: ')<br>
+    p_criado_em = input('Criado em (yyyy-mm-dd): ')<br><br>
+
+    # inserindo dados na tabela<br>
+    cursor.execute("""<br>
+    INSERT INTO clientes (nome, idade, cpf, email, fone, cidade, uf, criado_em)<br>
+    VALUES (?,?,?,?,?,?,?,?)<br>
+    """, (p_nome, p_idade, p_cpf, p_email, p_fone, p_cidade, p_uf, p_criado_em))<br><br>
+
+    conn.commit()<br><br>
+
+    print('Dados inseridos com sucesso.')<br><br>
+
+    conn.close()<br>
+    Nota: Caso use Python 2 use o método raw_input() em<br><br>
+
+    # python 2<br>
+    p_nome = raw_input('Nome: ')<br>
+    ...<br>
+    print 'Dados inseridos com sucesso.'<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 05_create_data_param.py<br>
+    Veja a interação do programa:<br><br>
+
+    Nome: Regis<br>
+    Idade: 35<br>
+    CPF: 30020030011<br>
+    Email: regis@email.com<br>
+    Fone: 11 9537-0000<br>
+    Cidade: Sao Paulo<br>
+    UF: SP<br>
+    Criado em (yyyy-mm-dd): 2014-06-15<br>
+    Dados inseridos com sucesso.<br>
+    Read - Lendo os dados<br>
+    Aqui nós usamos o famoso SELECT. O método fetchall() retorna o resultado do SELECT.<br><br>
+
+    # 06_read_data.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    # lendo os dados<br>
+    cursor.execute("""<br>
+    SELECT * FROM clientes;<br>
+    """)<br><br>
+
+    for linha in cursor.fetchall():<br>
+        print(linha)<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 06_read_data.py<br>
+    Eis o resultado:<br><br>
+
+    (1, 'Regis', 35, '00000000000', 'regis@email.com', '11-98765-4321', 'Sao Paulo', 'SP', '2014-06-08')<br>
+    (2, 'Aloisio', 87, '11111111111', 'aloisio@email.com', '98765-4322', 'Porto Alegre', 'RS', '2014-06-09')<br>
+    (3, 'Bruna', 21, '22222222222', 'bruna@email.com', '21-98765-4323', 'Rio de Janeiro', 'RJ', '2014-06-09')<br>
+    (4, 'Matheus', 19, '33333333333', 'matheus@email.com', '11-98765-4324', 'Campinas', 'SP', '2014-06-08')<br>
+    (5, 'Fabio', 23, '44444444444', 'fabio@email.com', '1234-5678', 'Belo Horizonte', 'MG', '2014-06-09')<br>
+    (6, 'Joao', 21, '55555555555', 'joao@email.com', '11-1234-5600', 'Sao Paulo', 'SP', '2014-06-09')<br>
+    (7, 'Xavier', 24, '66666666666', 'xavier@email.com', '12-1234-5601', 'Campinas', 'SP', '2014-06-10')<br>
+    (8, 'Regis', 35, '30020030011', 'regis@email.com', '11 9750-0000', 'Sao Paulo', 'SP', '2014-06-15')<br>
+    Update - Alterando os dados<br>
+    Observe o uso das variáveis id_cliente onde definimos o id a ser alterado, novo_fone e novo_criado_em usados como parâmetro para alterar os dados. Neste caso, salvamos as alterações com o método commit().<br><br>
+
+    # 07_update_data.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    id_cliente = 1<br>
+    novo_fone = '11-1000-2014'<br>
+    novo_criado_em = '2014-06-11'<br><br>
+
+    # alterando os dados da tabela<br>
+    cursor.execute("""<br>
+    UPDATE clientes<br>
+    SET fone = ?, criado_em = ?<br>
+    WHERE id = ?<br>
+    """, (novo_fone, novo_criado_em, id_cliente))<br><br>
+
+    conn.commit()<br><br>
+
+    print('Dados atualizados com sucesso.')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 07_update_data.py<br>
+    Delete - Deletando os dados<br>
+    Vamos excluir um registro pelo seu id.<br><br>
+
+    # 08_delete_data.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    id_cliente = 8<br><br>
+
+    # excluindo um registro da tabela<br>
+    cursor.execute("""<br>
+    DELETE FROM clientes<br>
+    WHERE id = ?<br>
+    """, (id_cliente,))<br><br>
+
+    conn.commit()<br><br>
+
+    print('Registro excluido com sucesso.')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 08_delete_data.py<br>
+    Adicionando uma nova coluna<br>
+    Para inserir uma nova coluna na tabela usamos o comando SQL ALTER TABLE.<br><br>
+
+    # 09_alter_table.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    # adicionando uma nova coluna na tabela clientes<br>
+    cursor.execute("""<br>
+    ALTER TABLE clientes<br>
+    ADD COLUMN bloqueado BOOLEAN;<br>
+    """)<br><br>
+
+    conn.commit()<br><br>
+
+    print('Novo campo adicionado com sucesso.')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 09_alter_table.py<br>
+    Lendo as informações do banco de dados<br>
+    Para ler as informações da tabela usamos o comando PRAGMA.<br><br>
+
+    Para listar as tabelas do banco usamos o comando SELECT name FROM sqlite_master ....<br><br>
+
+    Para ler o schema da tabela usamos o comando SELECT sql FROM sqlite_master ....<br><br>
+
+    # 10_view_table_info.py<br>
+    import sqlite3<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br>
+    cursor = conn.cursor()<br>
+    nome_tabela = 'clientes'<br><br>
+
+    # obtendo informações da tabela<br>
+    cursor.execute('PRAGMA table_info({})'.format(nome_tabela))<br><br>
+
+    colunas = [tupla[1] for tupla in cursor.fetchall()]<br>
+    print('Colunas:', colunas)<br>
+    # ou<br>
+    # for coluna in colunas:<br>
+    #    print(coluna)<br><br>
+
+    # listando as tabelas do bd<br>
+    cursor.execute("""<br>
+    SELECT name FROM sqlite_master WHERE type='table' ORDER BY name<br>
+    """)<br><br>
+
+    print('Tabelas:')<br>
+    for tabela in cursor.fetchall():<br>
+        print("%s" % (tabela))<br><br>
+
+    # obtendo o schema da tabela<br>
+    cursor.execute("""<br>
+    SELECT sql FROM sqlite_master WHERE type='table' AND name=?<br>
+    """, (nome_tabela,))<br><br>
+
+    print('Schema:')<br>
+    for schema in cursor.fetchall():<br>
+        print("%s" % (schema))<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 10_view_table_info.py<br>
+    Eis o resultado:<br><br>
+
+    Colunas: ['id', 'nome', 'idade', 'cpf', 'email', 'fone', 'cidade', 'uf', 'criado_em', 'bloqueado']<br>
+    Tabelas:<br>
+    clientes<br>
+    sqlite_sequence<br>
+    Schema:<br>
+    CREATE TABLE clientes (<br>
+            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,<br>
+            nome TEXT NOT NULL,<br>
+            idade INTEGER,<br>
+            cpf     VARCHAR(11) NOT NULL,<br>
+            email TEXT NOT NULL,<br>
+            fone TEXT,<br>
+            cidade TEXT,<br>
+            uf VARCHAR(2) NOT NULL,<br>
+            criado_em DATE NOT NULL<br>
+    , bloqueado BOOLEAN)<br>
+    Fazendo backup do banco de dados (exportando dados)<br>
+    Talvez seja este o item mais importante: backup. Observe o uso da biblioteca io que salva os dados num arquivo externo através do método write, e o método iterdump() que exporta a estrutura e dados da tabela para o arquivo externo.<br><br>
+
+    # 11_backup.py<br>
+    import sqlite3<br>
+    import io<br><br>
+
+    conn = sqlite3.connect('clientes.db')<br><br>
+
+    with io.open('clientes_dump.sql', 'w') as f:<br>
+        for linha in conn.iterdump():<br>
+            f.write('%s\n' % linha)<br><br>
+
+    print('Backup realizado com sucesso.')<br>
+    print('Salvo como clientes_dump.sql')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 11_backup.py<br>
+    $ cat clientes_dump.sql<br>
+    Com o comando cat você poderá ler a estrutura da tabela salva.<br><br>
+
+    Recuperando o banco de dados (importando dados)<br>
+    Criaremos um novo banco de dados e iremos reconstruir a tabela e os dados com o arquivo clientes_dump.sql. O método read() lê o conteúdo do arquivo clientes_dump.sql e o método executescript() executa as instruções SQL escritas neste arquivo.<br><br>
+
+    # 12_read_sql.py<br>
+    import sqlite3<br>
+    import io<br><br>
+
+    conn = sqlite3.connect('clientes_recuperado.db')<br>
+    cursor = conn.cursor()<br><br>
+
+    f = io.open('clientes_dump.sql', 'r')<br>
+    sql = f.read()<br>
+    cursor.executescript(sql)<br><br>
+
+    print('Banco de dados recuperado com sucesso.')<br>
+    print('Salvo como clientes_recuperado.db')<br><br>
+
+    conn.close()<br>
+    Para executar digite no terminal:<br><br>
+
+    $ python3 12_read_sql.py<br>
+    Banco de dados recuperado com sucesso.<br>
+    Salvo como clientes_recuperado.db<br>
+    $ sqlite3 clientes_recuperado.db 'SELECT * FROM clientes;'<br>
+    Com o último comando você verá que os dados estão lá. São e salvo!!!<br>
+</p>
+
+    </div>
+    </main>
+    
+    <footer>
+        <div class="logo-2">
+            <h2 id="footer-1">Curso de python 2ºC <br/> 2022 - 2022</h2>
+        </div>
+    </footer>
+</body>
+</html>
