@@ -27,12 +27,14 @@ main{
     height: 80vh;
 }
 main.body-2{
+    width: 50px;
     display: block;
     background: #20203bcc;
     margin: 0 7.5vw;
     width: 85vw;
     height: fit-content;
 }
+
 footer{
     background-color: #20203b;
     height: 10vh;
@@ -42,8 +44,9 @@ a{
     text-decoration: none;
 }
 p{
+
     margin: 10px;
-    text-align: justify;
+    text-align: left;
     color: #3cdbc0;
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 10px;
